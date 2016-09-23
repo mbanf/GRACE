@@ -1,4 +1,6 @@
 # GRACE
 
-TO use GRACE, download and unzip
-Readme, instructions and tutorials inside GRACE folder
+Home of the GRACE algorithm
+
+... currently updating the user interface...
+
