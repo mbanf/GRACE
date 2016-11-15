@@ -10,7 +10,7 @@ A gene regulatory network links transcription factors to their target genes and 
 
 FIGURE 1
 
-![Alt text](/inference_novel.jpg?raw=true "test")
+![Alt text](/inference_novel.jpg?raw=true "GRACE workflow")
 
 *General usage* <br />
 Initial gene regulatory network inference (figure 1 A) is based on fast random forest regression followed by DNA binding prediction map filtering (see below). To construct the initial network follow the steps in GRACE_initial_GRN_inference.R. 
@@ -24,7 +24,9 @@ In addition, we have prepared two standalone tutorials (for A. thaliana and D. m
 
 <br />
 *DNA binding constraint random forest regression based gene regulatory network inference*
-FIGURE 2
+
+![Alt text](/inference_randomForest.jpg?raw=true "random forest regression based network inference")
+
 
 
 <br />
