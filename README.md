@@ -22,7 +22,7 @@ In addition, we have prepared two standalone tutorials (for A. thaliana and D. m
 
 
 <br />
-For help or question please contact: <br />
+For help or questions please contact: <br />
 michael.banf(at)gmx.net
 
 <br />
