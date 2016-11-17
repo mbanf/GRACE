@@ -11,11 +11,11 @@ A gene regulatory network links transcription factors to their target genes and 
 ![Alt text](/inference_novel.jpg?raw=true "GRACE workflow")
 
 *General usage* <br />
-Step 1) Initial gene regulatory network inference (figure 1 A) is based on fast random forest regression followed by DNA binding prediction map filtering (see below). To construct the initial network follow the steps in GRACE_initial_GRN_inference.R. 
+Step 1) Initial gene regulatory network inference (Figure 1 A) is based on fast random forest regression followed by DNA binding prediction map filtering (see below). To construct the initial network follow the steps in GRACE_initial_GRN_inference.R. 
 
 Step 2) Configure GRACE_load_datasets.R to set paths to the location of all needed datasets.
 
-Step 3) Configure GRACE_pipeline_template.R, as described within the script, to run GRACE on the initial network using cofunctional network information and regulatory as well as cofunctional evidence data as training sets. 
+Step 3) Configure GRACE_pipeline_template.R, as described within the script, to run GRACE on the initial network using cofunctional network information and regulatory as well as cofunctional evidence data as training sets (Figure 1 B-C)
 
 *Tutorials*<br />
 In addition, we have prepared two standalone tutorials (for A. thaliana and D. melanogaster) in order to reproduce results, (GRACE_tutorial_athaliana.R and GRACE_tutorial_dmelanogaster.R). By default, the precomputed GRACE models are loaded for further processing, otherwise they can be recomputed.
