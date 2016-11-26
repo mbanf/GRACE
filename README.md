@@ -51,7 +51,7 @@ By default, the precomputed GRACE models are loaded for further processing, othe
 
 <br />
 For help or questions please contact: <br />
-michael.banf(at)gmx.net
+mbanf.research(at)gmail.com
 
 <br />
 
