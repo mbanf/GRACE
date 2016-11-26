@@ -39,15 +39,17 @@ n.sample_size <- 0.632 # as in traditional bootrapping approaches <br/>
 <br/>
 *Tutorials*<br />
 In addition, we have prepared two standalone tutorials (for A. thaliana and D. melanogaster) in order to reproduce results <br/>
-GRACE_tutorial_athaliana.R - represents a less optimized version of GRACE - can be used to recompute the predictions as given in the Supplement <br/> 
+GRACE_tutorial_athaliana.R - represents a less optimized version of GRACE - can be used to recompute the prioritized predictions (unpack A. thaliana dataset in GRACE folder) <br/> 
 
-GRACE_tutorial_dmelanogaster.R - based on the current version of GRACE - recompute the published predictions as well comparision with
+GRACE_tutorial_dmelanogaster.R - based on the current version of GRACE - recompute the prioritized predictions (unpack D. melanogaster dataset in GRACE folder) <br/>
+
+By default, the precomputed GRACE models are loaded for further processing, otherwise they can be recomputed. <br/>
 
 Reference for the datasets used within the D. melanogaster model:
 Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. Predictive regulatory models in Drosophila melanogaster by integrative inference of transcriptional networks. Genome Res. 2012 Jul;22(7):1334-49.
 <br />
 
-By default, the precomputed GRACE models are loaded for further processing, otherwise they can be recomputed. <br/>
+
 
 <br />
 For help or questions please contact: <br />
