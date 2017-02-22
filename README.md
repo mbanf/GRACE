@@ -51,7 +51,7 @@ Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. P
 <br />
 
 GRACE algorithm and results<br />
-Banf M, and Rhee S. Enhancing gene regulatory network inference through data integration with markov random fields. accepted in Nature Scientific Reports.
+Banf M, and Rhee S. Enhancing gene regulatory network inference through data integration with markov random fields. Scientific Reports,7:41174, Nature publishing group. (http://www.nature.com/articles/srep41174)
 
 <br />
 For help or questions please contact: <br />
