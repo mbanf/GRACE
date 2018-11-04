@@ -1,6 +1,8 @@
-#Enhancing gene regulatory network inference through data integration with markov random fields
+##Enhancing gene regulatory network inference through data integration with markov random fields
 <br />
 Home of the **GRACE** (**G**ene **R**egulatory network inference **AC**curacy **E**nhancement) algorithm <br />
+
+[Contact the author](mailto:michael@junkdna.ai) for help or questions. 
 
 <br />
 <br />
