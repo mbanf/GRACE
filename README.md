@@ -2,7 +2,11 @@
 <br />
 Home of the **GRACE** (**G**ene **R**egulatory network inference **AC**curacy **E**nhancement) algorithm <br />
 
+GRACE is currently .. 
+
 [Contact the author](mailto:michael@junkdna.ai) for help or questions. 
+
+
 
 <br />
 <br />
