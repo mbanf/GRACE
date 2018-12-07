@@ -34,12 +34,13 @@ By default, the precomputed GRACE models are loaded for further processing, othe
 
 # References
 
-Datasets used within the D. melanogaster model<br />
-Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. Predictive regulatory models in Drosophila melanogaster by integrative inference of transcriptional networks. Genome Res. 2012 Jul;22(7):1334-49.
-<br />
+
 
 GRACE algorithm and results<br />
 Banf M, and Rhee S. Enhancing gene regulatory network inference through data integration with markov random fields. Scientific Reports,7:41174, Nature publishing group. (http://www.nature.com/articles/srep41174)
+<br />
+Datasets used within the D. melanogaster model<br />
+Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. Predictive regulatory models in Drosophila melanogaster by integrative inference of transcriptional networks. Genome Res. 2012 Jul;22(7):1334-49.
 
 <br />
 For help or questions please contact: <br />
