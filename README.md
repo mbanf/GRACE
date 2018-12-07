@@ -3,10 +3,10 @@
 
 
 ## Notes
-GRACE is currently being maintained
+---------- GRACE is currently being maintained --------
 
 
-
+<br>
 [Contact the author](mailto:michael@junkdna.ai) for help or questions. 
 
 
