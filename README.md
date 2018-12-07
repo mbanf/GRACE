@@ -7,6 +7,7 @@
 
 
 <br>
+
 [Contact the author](mailto:michael@junkdna.ai) for help or questions. 
 
 
@@ -41,10 +42,6 @@ Banf M, and Rhee S. Enhancing gene regulatory network inference through data int
 <br />
 Datasets used within the D. melanogaster model<br />
 Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. Predictive regulatory models in Drosophila melanogaster by integrative inference of transcriptional networks. Genome Res. 2012 Jul;22(7):1334-49.
-
-<br />
-For help or questions please contact: <br />
-mbanf.research(at)gmail.com
 
 <br />
 
