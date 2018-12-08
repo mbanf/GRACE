@@ -3,7 +3,7 @@
 
 
 ## Notes
----------- GRACE is currently being maintained --------
+---------- Important: GRACE is currently down for maintenence - will be up again shortly  --------
 
 
 <br>
