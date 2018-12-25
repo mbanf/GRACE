@@ -26,6 +26,9 @@ Step 3) Configure GRACE_pipeline_template.R, as described within the script, to 
 <br/>
 <br/>
 *Tutorials*<br />
+
+Get the original code and datasets from onedrive: [GRACE original code and datasets](https://1drv.ms/u/s!Avm82Xhe9EZj411IGorBFt8zpwKp). 
+
 In addition, we have prepared two standalone tutorials (for A. thaliana and D. melanogaster) in order to reproduce results <br/>
 GRACE_tutorial_athaliana.R - represents a less optimized version of GRACE - can be used to recompute the prioritized predictions (unpack A. thaliana dataset in GRACE folder) <br/> 
 
