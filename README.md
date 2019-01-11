@@ -1,8 +1,6 @@
 # Enhancing gene regulatory network inference through data integration with markov random fields
 
 
-[![GRACE](/youGrace.JPG)](https://www.youtube.com/watch?v=sQ02p4CU6UM "GRACE")
-
 
 ## Notes
 ---------- Important: GRACE is currently down for maintenence - will be up again shortly  --------
@@ -38,9 +36,13 @@ GRACE_tutorial_dmelanogaster.R - based on the current version of GRACE - recompu
 
 By default, the precomputed GRACE models are loaded for further processing, otherwise they can be recomputed. <br/>
 
-# References
+## Talk 
+
+[![GRACE](/youGrace.JPG)](https://www.youtube.com/watch?v=sQ02p4CU6UM "GRACE")
 
 
+
+## References
 
 GRACE algorithm and results<br />
 Banf M, and Rhee S. Enhancing gene regulatory network inference through data integration with markov random fields. Scientific Reports,7:41174, Nature publishing group. (http://www.nature.com/articles/srep41174)
