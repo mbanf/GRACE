@@ -1,6 +1,8 @@
 # Enhancing gene regulatory network inference through data integration with markov random fields
 
 
+[![GRACE](http://img.youtube.com/vi/KOxbO0EI4MA/0.jpg)](https://www.youtube.com/watch?v=sQ02p4CU6UM "GRACE")
+
 
 ## Notes
 ---------- Important: GRACE is currently down for maintenence - will be up again shortly  --------
