@@ -710,14 +710,7 @@ request_libraries <- function(){
   
   #detach("package:TFBSTools", unload=TRUE)
   
-  if(!require(netbenchmark)){
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-      install.packages("BiocManager")
-
-    BiocManager::install("netbenchmark")
-  }
-  
-  library(netbenchmark)
+  # netbenchmark dependency removed (archived on Bioconductor, unused)
   library(graphics)
   library(Matrix)
   library(ggplot2)

@@ -10,7 +10,7 @@
 rm(list=ls()) # clear workspace 
 
 # set path to the GRACE directory
-setwd("/home/mbanf/Documents/Computational_Biology/Projects/GRACE_release/")
+# run from a working folder that holds all GRACE R files and the unpacked datasets (see run_tutorial.sh)
 
 source("GRACE.R")
 source("GRACE_helperfunctions.R")

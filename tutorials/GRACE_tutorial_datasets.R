@@ -150,12 +150,19 @@ request_dataset <- function(species = "arabidopsis", method = "GENIE3"){
     
     
     ## ARACYC - same metabolic pathway cooccurence
-    df.aracyc <- read.table("athaliana_datasets/aracyc-12.0.1-pathways.20150407", header = TRUE, sep = "\t", quote = "", stringsAsFactors = FALSE)
-    df.aracyc <- subset(df.aracyc, df.aracyc$Gene.id != "unknown")
-    v.pwys <- unique(df.aracyc$Pathway.id)
-    
+    # Optional: validation-only dataset (not used for model training or the ensemble).
+    # If the file is absent, an all-zero matrix is used and the AraCyc validation column reads 0.
+    file.aracyc <- "athaliana_datasets/aracyc-12.0.1-pathways.20150407"
     mat.aracyc.tgs <- Matrix(0, nrow = length(v.tgs), ncol = length(v.tgs), dimnames = list(v.tgs, v.tgs))
-    for(p in 1:length(v.pwys)){
+    v.pwys <- character(0)
+    if(file.exists(file.aracyc)){
+      df.aracyc <- read.table(file.aracyc, header = TRUE, sep = "\t", quote = "", stringsAsFactors = FALSE)
+      df.aracyc <- subset(df.aracyc, df.aracyc$Gene.id != "unknown")
+      v.pwys <- unique(df.aracyc$Pathway.id)
+    }else{
+      warning("AraCyc pathway file not found - skipping metabolic pathway validation: ", file.aracyc)
+    }
+    for(p in seq_along(v.pwys)){
       v.gns.p <- subset(df.aracyc, df.aracyc$Pathway.id == v.pwys[p])$Gene.id    
       v.gns.p <- intersect(v.gns.p, v.tgs)
       if(length(v.gns.p) >= 2){

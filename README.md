@@ -1,54 +1,112 @@
-# Enhancing gene regulatory network inference through data integration with markov random fields
+# GRACE — Release 1.0 (original R implementation)
 
+**Enhancing gene regulatory network inference through data integration with Markov random fields**
 
+This branch holds the original R implementation of GRACE and the published results of
+[Banf & Rhee, *Scientific Reports* 7:41174 (2017)](https://www.nature.com/articles/srep41174).
+For the Python implementation with an MCP server, see the [`master`](https://github.com/mbanf/GRACE) branch.
 
-## Notes
----------- Important: GRACE is currently down for maintenence - will be up again shortly  --------
-
-
-<br>
-
-[Contact the author](mailto:michael@junkdna.ai) for help or questions. 
-
+<p align="center">
+  <img src="inference_novel.jpg" width="900" alt="GRACE workflow"/>
+</p>
 
 ## About
-A gene regulatory network links transcription factors to their target genes and represents a map of transcriptional regulation. Much progress has been made in deciphering gene regulatory networks computationally. However, gene regulatory network inference for most eukaryotic organisms remain challenging. To improve the accuracy of gene regulatory network inference and facilitate candidate selection for experimentation, we developed an algorithm called GRACE (Gene Regulatory network inference ACcuracy Enhancement). GRACE exploits biological *a priori* and heterogeneous data integration to generate high-confidence network predictions for eukaryotic organisms using Markov Random Fields in a semi-supervised fashion. GRACE uses a novel optimization scheme to integrate regulatory evidence and biological relevance. It is particularly suited for model learning with sparse regulatory gold standard data. We show GRACE's potential to produce high confidence regulatory networks compared to state of the art approaches using *Drosophila melanogaster* and *Arabidopsis thaliana* data. In an *A. thaliana* developmental gene regulatory network, GRACE recovers cell cycle related regulatory mechanisms and further hypothesizes several novel regulatory links, including a putative control mechanism of vascular structure formation due to modifications in cell proliferation.
-<br />
 
-![Alt text](/inference_novel.jpg?raw=true "GRACE workflow")
+A gene regulatory network links transcription factors to their target genes and represents a map of
+transcriptional regulation. GRACE (Gene Regulatory network inference ACcuracy Enhancement) exploits
+biological *a priori* knowledge and heterogeneous data integration to generate high-confidence network
+predictions for eukaryotic organisms, using Markov random fields in a semi-supervised fashion. It is
+particularly suited for model learning with sparse regulatory gold-standard data. The paper shows
+GRACE's results on *Drosophila melanogaster* and *Arabidopsis thaliana* data; in an *A. thaliana*
+developmental network, GRACE recovers cell-cycle-related regulatory mechanisms and proposes novel
+regulatory links.
 
-*General usage* <br />
-Step 1) Initial gene regulatory network inference (Figure 1 A) is based on fast random forest regression followed by DNA binding prediction map filtering (GRACE_initial_GRN_inference.R) <br/>
-<br/>
-Step 2) Configure GRACE_load_datasets.R to set paths to the location of all needed datasets.<br/>
-<br/>
-Step 3) Configure GRACE_pipeline_template.R, as described within the script, to run GRACE on the initial network using cofunctional network information and regulatory as well as cofunctional evidence data as training sets (Figure 1 B-C)<br/>
-<br/>
-<br/>
-*Tutorials*<br />
+## Running the tutorials
 
-Get the original code and datasets from onedrive: [GRACE original code and datasets](https://1drv.ms/u/s!Avm82Xhe9EZj411IGorBFt8zpwKp). 
+Tested with R 4.4 (the code was written for R 3.2).
 
-In addition, we have prepared two standalone tutorials (for A. thaliana and D. melanogaster) in order to reproduce results <br/>
-GRACE_tutorial_athaliana.R - represents a less optimized version of GRACE - can be used to recompute the prioritized predictions (unpack A. thaliana dataset in GRACE folder) <br/> 
+1. Install the R packages:
 
-GRACE_tutorial_dmelanogaster.R - based on the current version of GRACE - recompute the prioritized predictions (unpack D. melanogaster dataset in GRACE folder) <br/>
+   ```r
+   install.packages(c("Matrix", "reshape2", "ggplot2", "ROCR", "caTools", "plyr", "foreach",
+                      "doParallel", "igraph", "GenSA", "ranger"))
+   # CRF was archived on CRAN; install the last release from the archive
+   install.packages("https://cran.r-project.org/src/contrib/Archive/CRF/CRF_0.4-3.tar.gz",
+                    repos = NULL, type = "source")
+   ```
 
-By default, the precomputed GRACE models are loaded for further processing, otherwise they can be recomputed. <br/>
+2. Download the tutorial datasets (see [Data](#data)) and unpack them, giving folders
+   `athaliana_datasets/` and `drosophila_datasets/`.
 
-## Talk 
+3. Run a tutorial:
 
-[![GRACE](/youGrace.JPG)](https://www.youtube.com/watch?v=sQ02p4CU6UM "GRACE")
+   ```bash
+   ./run_tutorial.sh athaliana  /path/to/datasets
+   ./run_tutorial.sh drosophila /path/to/datasets
+   ```
 
+   The script builds a flat working folder `work/` (the tutorials source all files from their working
+   directory) and writes `prediction_<species>_graceEnsemble.csv` there.
 
+By default the tutorials load the precomputed models from the paper and rebuild the ensemble network.
+Both runs reproduce the published networks exactly:
 
-## References
+| Tutorial | Runtime | Result |
+|---|---|---|
+| *A. thaliana* | ~40 s | 792 links, identical to `prediction_arabidopsis_graceEnsemble.csv` |
+| *D. melanogaster* | ~3.5 min | 7,164 links, identical to `prediction_drosophila_graceEnsemble.csv` |
 
-GRACE algorithm and results<br />
-Banf M, and Rhee S. Enhancing gene regulatory network inference through data integration with markov random fields. Scientific Reports,7:41174, Nature publishing group. (http://www.nature.com/articles/srep41174)
-<br />
-Datasets used within the D. melanogaster model<br />
-Marbach D, Roy S, Ay F, Meyer PE, Candeias R, Kahveci T, Bristow CA, Kellis M. Predictive regulatory models in Drosophila melanogaster by integrative inference of transcriptional networks. Genome Res. 2012 Jul;22(7):1334-49.
+To retrain the 100 models instead of loading them, switch the `if(FALSE)` block around model training
+in the tutorial to `if(TRUE)` (about 42 s per model for *A. thaliana* and 186 s for *D. melanogaster*
+on one core).
 
-<br />
+### Changes from the 2017 code
 
+Only what is needed to run on current R:
+
+- `netbenchmark` is no longer loaded: it was removed from Bioconductor and was never called.
+- The hard-coded `setwd()` in the tutorials is removed; `run_tutorial.sh` sets up the working folder.
+- The AraCyc pathway file (`aracyc-12.0.1-pathways.20150407`, from the Plant Metabolic Network) is
+  optional. It is only used to validate co-regulated gene pairs, not for training or prediction. Without
+  it, the AraCyc validation column reads 0.
+
+## Repository layout
+
+```
+R/                        GRACE core: meta network, modules, Markov random fields, optimization
+tutorials/                A. thaliana and D. melanogaster tutorials, dataset loading, evaluation
+man/                      function documentation
+run_tutorial.sh           runs a tutorial on current R
+prediction_*_graceEnsemble.csv   published GRACE networks
+```
+
+## General usage
+
+1. Initial gene regulatory network inference (Figure 1A) with fast random forest regression, followed
+   by DNA-binding motif filtering (`tutorials/GRACE_initial_GRN_inference.R`).
+2. Configure `R/GRACE_load_datasets.R` with the paths to all datasets.
+3. Configure `tutorials/GRACE_pipeline_template.R` as described in the script, to run GRACE on the
+   initial network with co-functional network information, and regulatory and co-functional evidence
+   as training sets (Figure 1B-C).
+
+## Data
+
+The tutorial datasets are not stored in this repository. Download them here:
+[GRACE tutorial datasets (OneDrive)](ONEDRIVE_LINK_TBD).
+
+The *D. melanogaster* model uses data from Marbach D, *et al.* Predictive regulatory models in
+*Drosophila melanogaster* by integrative inference of transcriptional networks. *Genome Res.*
+22(7):1334-49 (2012).
+
+## Talk
+
+[![GRACE talk](youGrace.JPG)](https://www.youtube.com/watch?v=sQ02p4CU6UM "GRACE")
+
+## Reference
+
+Banf M, Rhee SY. Enhancing gene regulatory network inference through data integration with Markov
+random fields. *Scientific Reports* 7:41174 (2017). https://www.nature.com/articles/srep41174
+
+## License
+
+MIT License. Contact: [Michael Banf](mailto:michael@junkdna.ai)
