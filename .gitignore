@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# datasets are distributed separately (see README)
+*_datasets/
+*_datasets.zip
+.DS_Store
