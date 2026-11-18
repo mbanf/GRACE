@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "grace": {
+      "command": "uv",
+      "args": ["run", "--extra", "mcp", "python", "-m", "grace_mcp"],
+      "env": {
+        "GRACE_DATA_DIR": "${GRACE_DATA_DIR}"
+      }
+    }
+  }
+}

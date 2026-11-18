@@ -1,0 +1,10 @@
+# datasets are distributed separately (see README)
+data/
+*_datasets/
+*_datasets.zip
+results/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
