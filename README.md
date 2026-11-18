@@ -92,7 +92,7 @@ prediction_*_graceEnsemble.csv   published GRACE networks
 ## Data
 
 The tutorial datasets are not stored in this repository. Download them here:
-[GRACE tutorial datasets (OneDrive)](ONEDRIVE_LINK_TBD).
+[GRACE tutorial datasets (OneDrive)](https://1drv.ms/f/c/6346f45e78d9bcf9/IgAgxW1n0wl0T5G_wxs18KpgATjpFUQECF1bKNYVJrAsM8g?e=HuSa5e).
 
 The *D. melanogaster* model uses data from Marbach D, *et al.* Predictive regulatory models in
 *Drosophila melanogaster* by integrative inference of transcriptional networks. *Genome Res.*
