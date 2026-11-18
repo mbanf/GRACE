@@ -132,7 +132,7 @@ grace_mcp/
 ## Data
 
 The tutorial datasets are not stored in this repository:
-[GRACE tutorial datasets (OneDrive)](ONEDRIVE_LINK_TBD).
+[GRACE tutorial datasets (OneDrive)](https://1drv.ms/f/c/6346f45e78d9bcf9/IgAgxW1n0wl0T5G_wxs18KpgATjpFUQECF1bKNYVJrAsM8g?e=HuSa5e).
 
 | Species | Initial network | Co-functional network | Regulatory gold standard | Validation |
 |---|---|---|---|---|
